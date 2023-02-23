@@ -1,0 +1,43 @@
+<p-toast></p-toast>
+<div class="content-section implementation">
+    <p-card [style]="{width: '700px'}"  class=" flex align-items-center justify-content-center">
+        <h2>{{edicao? 'Alterar' : 'Cadastrar' }} Participante</h2>
+            
+            <span class="p-float-label">
+                <input id="float-input" class=" flex-1 w-20rem m-2 px-5 py-3" ngDefaultControl pInputText maxlength="150" name="nome" type="text"
+                    [(ngModel)]="dto.nome">
+                <label for="nome">Nome *</label>
+            </span>
+
+            <br>
+            <span class="p-float-label">
+                <input id="float-input" class="w-20rem m-2 px-5 py-3" ngDefaultControl pInputText maxlength="150" name="valor" type="text"
+                    [(ngModel)]="dto.valor">
+                <label for="valor">Valor *</label>
+            </span>
+            
+            <br>
+            <span class="p-float-label">
+                <input id="float-input" class="w-20rem m-2 px-5 py-3" ngDefaultControl pInputText maxlength="150" name="quantidade" type="text"
+                    [(ngModel)]="dto.quantidade">
+                <label for="quantidade">Quantidade *</label>
+            </span>
+
+
+            <div class="p-field p-col-12 p-md-4" style="padding-top: 22px;">
+                <div class="p-fluid p-formgrid p-grid ">
+                    <div class="p-field p-col ">
+                        <button (click)="save()" pButton pRipple type="button" label="salvar" class="p-button-rounded"
+                            [label]="edicao?'Alterar': 'Salvar'"></button>
+                    </div>
+                    <div class="p-field p-col">
+                        <button pButton pRipple type="button" label="Voltar"
+                            class="p-button-rounded p-button-secondary " (click)="voltar()"></button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </p-card>
