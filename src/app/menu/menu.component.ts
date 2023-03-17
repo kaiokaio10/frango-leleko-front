@@ -29,7 +29,7 @@ export class MenuComponent {
         items: [
           [
             {
-              items: [ { label: 'Cadastrar', url: '/#/itens/cadastro' }]
+              items: [ { label: 'Pesquisar', url: '/#/itens/listagem' },{ label: 'Cadastrar', url: '/#/itens/cadastro' }]
             },
           ],
         ]

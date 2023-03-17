@@ -14,6 +14,8 @@ export class CadastroComponent {
   
   public dto: Item = new Item();
   public edicao: boolean = false;
+  public medidas: any ;
+  public medida: any ;
 
 
   constructor(
@@ -23,11 +25,16 @@ export class CadastroComponent {
     private activatedRoute: ActivatedRoute,
 
   ) {
+    
+}
 
-  }
 
   ngOnInit(): void {
     this.recuperarInfRota();
+    this.medidas = [
+      {name: 'Kg', code: 'Kg'},
+      {name: 'Gramas', code: 'G'},
+  ];
   }
 
   validarForm() {
@@ -51,9 +58,13 @@ export class CadastroComponent {
     if (!this.validarForm()) {
       return;
     }
+    console.log(this.dto);
+    console.log(this.medidas);
+    this.dto.medida = this.medida.code;
+    
     this.service.salvar(this.dto).subscribe(retorno => {
       this.dto = retorno;
-      this.messageService.add({ severity: 'success', summary: 'Atenção', detail: 'Participante salvo com sucesso' });
+      this.messageService.add({ severity: 'success', summary: 'Atenção', detail: ' Item salvo com sucesso' });
       this.limpar();
     }, (erro: HttpErrorResponse) => {
       this.messageService.add({ severity: 'warn', summary: 'Atenção', detail: erro.error });

@@ -22,12 +22,16 @@ import {DialogService} from 'primeng/dynamicdialog';
 import { ItemModule } from './item/item.module';
 import { CadastroComponent } from './item/cadastro/cadastro.component';
 import { MenuComponent } from './menu/menu.component';
+import {DropdownModule} from 'primeng/dropdown';
+import { ListagemComponent } from './item/listagem/listagem.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CadastroComponent,
-    MenuComponent
+    MenuComponent,
+    ListagemComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,7 @@ import { MenuComponent } from './menu/menu.component';
     ConfirmPopupModule,
     DialogModule,
     ListboxModule,
+    DropdownModule,
     
   ],
   providers: [MessageService, ConfirmationService,DialogService], 

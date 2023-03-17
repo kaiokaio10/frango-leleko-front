@@ -3,5 +3,6 @@ export class  Item {
   nome!: string;
   quantidade!: number;
   valor!: number;
+  medida!:string;
 }
 

@@ -1,0 +1,60 @@
+<p-toast></p-toast>
+<div class="content-section implementation">
+    <p-card>
+        <h2 style="text-align: center;">Pesquisar por item </h2>
+        <div class="p-formgroup-inline">
+            <span class="p-float-label" style="left: 1050px;">
+                <input id="float-input" class=" flex-1 w-30rem m-2 px-5 py-3 " ngDefaultControl pInputText maxlength="150" name="nome" type="text"
+                    [(ngModel)]="dto.nome">
+                <label for="nome">Nome do Item  *</label>
+            </span>
+
+            <div class="p-field p-col-12 p-md-4" style="padding-top: 22px;  ">
+                <div class="p-field p-col " style="left: 970px;" >
+                    <button (click)="pesquisar()" pButton pRipple type="button" [style]="{width: '250px', left : '940px'}" label="Consultar" class="p-button-rounded"></button>
+                    <button (click)="limpar()" pButton pRipple type="button" [style]="{width: '250px', left : '940px'}" label="Limpar" class="p-button-rounded"></button>
+                    <button (click)="openNovo()" pButton pRipple type="button" [style]="{width: '250px', left : '940px'}" label="Cadastro" class="p-button-rounded"></button>
+                </div>
+            </div>
+        </div>
+
+
+        <p-table [value]="listaItem" styleClass="p-datatable-sm" [tableStyle]="{'min-width': '50rem'}">
+            <ng-template pTemplate="header">
+
+                <tr>
+                    <th>Nome</th>
+                    <th>Valor</th>
+                    <th>Quantidade</th>
+                    <th>medida</th>
+                    <th>Ações</th>
+                </tr>
+            </ng-template>
+
+            <p-confirmPopup></p-confirmPopup>
+
+            <ng-template pTemplate="body" let-dtoView>
+                <tr>
+                    <td>{{dtoView.nome}}</td>
+                    <td>{{dtoView.valor}}</td>
+                    <td>{{dtoView.quantidade}}</td>
+                    <td>{{dtoView.medida}}</td>
+                    <td>
+                        <p-button (click)="confirmar(dtoView.id,$event)" pTooltip="Excluir" icon="pi pi-trash">
+                        </p-button>
+                        &nbsp;
+                        <p-button (click)="openEditar(dtoView.id)" pTooltip="Alterar" icon="pi pi-pencil"
+                            tooltipPosition="left"></p-button>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage" let-columns>
+                <tr>
+                    <td [attr.colspan]="columns && columns.length">
+                        Nenhuma item encontrado
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </p-card>
+</div>

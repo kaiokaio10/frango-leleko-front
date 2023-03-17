@@ -7,7 +7,8 @@ import { Item } from "../model/item";
 
 export class ItemService {
 
-    apiURL: string = 'localhost:8080/'
+    apiURL: string = 'http://localhost:8080'
+    path: string ='/api/item'
     constructor(
         private http: HttpClient
     ) { }
@@ -20,31 +21,31 @@ export class ItemService {
     }
 
     alterar(dto: Item): Observable<Item> {
-        return this.http.put<Item>(`${this.apiURL}`, dto);
+        return this.http.put<Item>(`${this.apiURL+ this.path}`, dto);
     }
 
     consultarPorId(id: number): Observable<Item> {
-        return this.http.get<Item>(`${this.apiURL}/${id}`);
+        return this.http.get<Item>(`${this.apiURL + this.path}/${id}`);
     }
     consultarItemPorId(id: number): Observable<Item> {
-        return this.http.get<Item>(`${this.apiURL}/item/${id}`);
+        return this.http.get<Item>(`${this.apiURL + this.path}/item/${id}`);
     }
 
     salvar(dto: Item): Observable<Item> {
-        return this.http.post<Item>(this.apiURL, dto);
+        return this.http.post<Item>(this.apiURL + this.path, dto);
     }
 
 
     excluir(id: number): Observable<any> {
-        return this.http.delete<any>(`${this.apiURL}/${id}`);
+        return this.http.delete<any>(`${this.apiURL + this.path}/${id}`);
     }
 
-    pesquisar(dto: Item): Observable<Item[]> {
-        return this.http.post<Item[]>(`${this.apiURL}/pesquisar`, dto);
+    pesquisar(nome: string): Observable<Item[]> {
+        return this.http.get<Item[]>(`${this.apiURL + this.path}/pesquisar/${nome}`);
     }
 
     visualizarListaCompleta(): Observable<Item[]> {
-        return this.http.get<Item[]>(`${this.apiURL}/listartodos`);
+        return this.http.get<Item[]>(`${this.apiURL + this.path}`);
     }
 
 }
