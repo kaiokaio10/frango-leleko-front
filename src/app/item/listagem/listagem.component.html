@@ -3,17 +3,17 @@
     <p-card>
         <h2 style="text-align: center;">Pesquisar por item </h2>
         <div class="p-formgroup-inline">
-            <span class="p-float-label" style="left: 1050px;">
+            <span class="p-float-label" style="left: 450px;">
                 <input id="float-input" class=" flex-1 w-30rem m-2 px-5 py-3 " ngDefaultControl pInputText maxlength="150" name="nome" type="text"
                     [(ngModel)]="dto.nome">
                 <label for="nome">Nome do Item  *</label>
             </span>
 
             <div class="p-field p-col-12 p-md-4" style="padding-top: 22px;  ">
-                <div class="p-field p-col " style="left: 970px;" >
-                    <button (click)="pesquisar()" pButton pRipple type="button" [style]="{width: '250px', left : '940px'}" label="Consultar" class="p-button-rounded"></button>
-                    <button (click)="limpar()" pButton pRipple type="button" [style]="{width: '250px', left : '940px'}" label="Limpar" class="p-button-rounded"></button>
-                    <button (click)="openNovo()" pButton pRipple type="button" [style]="{width: '250px', left : '940px'}" label="Cadastro" class="p-button-rounded"></button>
+                <div class="p-field p-col " style="left: 380px;" >
+                    <button (click)="pesquisar()" pButton pRipple type="button" [style]="{width: '250px', left : '340px'}" label="Consultar" class="p-button-rounded"></button>
+                    <button (click)="limpar()" pButton pRipple type="button" [style]="{width: '250px', left : '340px'}" label="Limpar" class="p-button-rounded"></button>
+                    <button (click)="openNovo()" pButton pRipple type="button" [style]="{width: '250px', left : '340px'}" label="Cadastro" class="p-button-rounded"></button>
                 </div>
             </div>
         </div>
