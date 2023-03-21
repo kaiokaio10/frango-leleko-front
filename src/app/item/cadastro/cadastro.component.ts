@@ -109,7 +109,7 @@ export class CadastroComponent {
   }
 
   voltar() {
-    this.router.navigate(['/participante/listagem']);
+    this.router.navigate(['/itens/listagem']);
   }
 
   recuperarInfRota() {
