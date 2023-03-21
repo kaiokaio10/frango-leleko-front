@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 
 // Nome da pasta do siste sera feito o build
-const appName = 'cafemanhafront-api'
+const appName = 'frango_leleko'
 
 // local onde build irá gerar os arquivo
 const outputPath = `${__dirname}/dist/${appName}`;
@@ -15,7 +15,7 @@ app.use(express.static(outputPath));
 
 //redirecionar qualquer requisição para o index.html
 app.get('/*',(req,res) =>{
-    res.sendFile(`${outputPath}/index.html`)
+    res.sendFile(`${outputPath}`)
 });
 
 // ouvir a porta que o heroky disponibilizar
