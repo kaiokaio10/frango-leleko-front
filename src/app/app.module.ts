@@ -24,6 +24,8 @@ import { CadastroComponent } from './item/cadastro/cadastro.component';
 import { MenuComponent } from './menu/menu.component';
 import {DropdownModule} from 'primeng/dropdown';
 import { ListagemComponent } from './item/listagem/listagem.component';
+import { HomeComponent } from './home/home.component';
+import { VendaComponent } from './venda/venda.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { ListagemComponent } from './item/listagem/listagem.component';
     AppComponent,
     CadastroComponent,
     MenuComponent,
-    ListagemComponent
+    ListagemComponent,
+    HomeComponent,
+    VendaComponent
   ],
   imports: [
     BrowserModule,

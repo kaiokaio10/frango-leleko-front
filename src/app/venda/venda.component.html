@@ -1,0 +1,40 @@
+<p-toast></p-toast>
+<p-card>
+        <h2 style="text-align: center;"> Criar Relatório de Vendas</h2>
+            <div class="col-12 md:col-6">
+            <span class="p-float-label" style="left: 400px;">
+                <input id="float-input" class=" flex-1 w-30rem m-2 px-5 py-3 " ngDefaultControl pInputText maxlength="150" name="nome" type="text"
+                    [(ngModel)]="dto.quantidade">
+                <label for="nome">Quantidade de Frangos colocados *</label>
+            </span>
+            <br>
+            <span class="p-float-label" style="left: 400px;">
+                <input id="float-input" class="w-30rem m-2 px-5 py-3 " ngDefaultControl pInputText maxlength="150" name="valor" type="text"
+                    [(ngModel)]="dto.valor">
+                <label for="valor">Valor do Frango *</label>
+            </span>
+        </div>
+        <div class="col-12 md:col-6">
+            <span class="p-float-label" style="left: 400px;">
+                <input id="float-input" class="w-30rem m-2 px-5 py-3" ngDefaultControl pInputText maxlength="150" name="quantidade" type="text"
+                    [(ngModel)]="dto.quantidade">
+                <label for="quantidade">Quantidade de Frango vendidos *</label>
+            </span>
+
+            <span class="p-float-label" style="left: 400px;">
+                <input id="float-input" class="w-30rem m-2 px-5 py-3" ngDefaultControl pInputText maxlength="150" name="quantidade" type="text"
+                    [(ngModel)]="dto.quantidade">
+                <label for="quantidade">Quantidade de Frango não vendidos *</label>
+            </span>
+        </div>
+            <div class="p-field p-col-12 p-md-2" style="padding-top: 22px;  ">
+                    <div class="p-field p-col " style="left: 400px;" >
+                        <button (click)="save()" pButton pRipple type="button" [style]="{width: '250px', left : '380px'}" label="salvar" class="p-button-rounded"
+                            [label]="edicao?'Alterar': 'Salvar'"></button>
+                        <button pButton pRipple type="button" label="Voltar" [style]="{width: '250px',left:'400px'}"
+                            class="p-button-rounded p-button-secondary " (click)="voltar()"></button>
+                    </div>
+            </div>
+        </p-card>
+
+

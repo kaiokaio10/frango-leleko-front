@@ -33,6 +33,16 @@ export class MenuComponent {
             },
           ],
         ]
+      },
+      {
+        label: 'Vendas', icon: 'pi pi-fw pi-plus',
+        items: [
+          [
+            {
+              items: [ { label: 'Criar Relatório de Vendas', url: '/#/vendas' }]
+            },
+          ],
+        ]
       }
     ]
   }
