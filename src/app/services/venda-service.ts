@@ -7,7 +7,7 @@ import { Venda } from "../model/venda";
 
 export class VendaService {
 
-    apiURL: string = 'http://localhost:8080'
+    apiURL: string = 'http://ec2-18-231-39-83.sa-east-1.compute.amazonaws.com:8080'
     path: string ='/api/venda'
     constructor(
         private http: HttpClient
