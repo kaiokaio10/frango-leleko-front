@@ -1,22 +1,19 @@
 <div class="p-d-flex p-flex-column p-jc-center p-ai-center" style="height: 100vh">
-    
     <p-card class="p-shadow-8" style="width: 100%">
       <h2 style="text-align: center;">Pesquisar por item</h2>
   
       <div class="p-grid p-justify-center p-mb-2">
         <div class="p-col-12 p-md-6">
           <span class="p-float-label">
-            <input id="float-input" class="p-inputtext p-d-block p-w-100" ngDefaultControl pInputText maxlength="150" name="nome" type="text"
-                   [(ngModel)]="dto.nome">
+            <input id="float-input" class="p-inputtext p-d-block p-w-100" ngDefaultControl pInputText maxlength="150" name="nome" type="text" [(ngModel)]="dto.nome">
             <label for="nome">Nome do Item *</label>
           </span>
         </div>
-        <br>
-        <button (click)="pesquisar()" pButton pRipple label="Consultar" class="p-button-rounded p-mb-2"></button>
-    <button (click)="limpar()" pButton pRipple label="Limpar" class="p-button-rounded p-mb-2"></button>
-    <button (click)="openNovo()" pButton pRipple label="Cadastro" class="p-button-rounded p-mb-2"></button>
-  
-  
+        <div class="p-col-12 p-md-6 p-d-flex p-jc-between p-ai-center p-mb-2">
+          <button (click)="pesquisar()" pButton pRipple label="Consultar" class="p-button-rounded"></button>
+          <button (click)="limpar()" pButton pRipple label="Limpar" class="p-button-rounded"></button>
+          <button (click)="openNovo()" pButton pRipple label="Cadastro" class="p-button-rounded"></button>
+        </div>
         <div class="p-col-12 p-md-6">
           <div class="p-d-flex p-jc-center">
             <p-toast></p-toast>
