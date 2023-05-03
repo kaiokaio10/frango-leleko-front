@@ -16,17 +16,20 @@ export class HomeComponent {
     public dto!: Venda;
     public exibir: boolean = false;
     displayModal!: boolean;
+    
 
     constructor(
         private service: VendaService,
         private messageService: MessageService,
         private confirmationService: ConfirmationService,
         public dialogService: DialogService,
+        
     ) { }
 
     ngOnInit() {
       this.listarVendas();
-      
+      this.teste();
+      this.iniciarBack();
   }
 
   listarVendas() {
@@ -52,5 +55,11 @@ export class HomeComponent {
       this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Erro ao iniciar o BackEnd' });
     });
   }
+  teste() {
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    console.log(isMobile);
+    
+  }
 
+  
 }

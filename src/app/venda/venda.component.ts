@@ -29,6 +29,7 @@ export class VendaComponent {
 
 
   ngOnInit(): void {
+    this.iniciarBack();
   }
 
   validarForm() {

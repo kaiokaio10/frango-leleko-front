@@ -30,6 +30,7 @@ export class ListagemComponent {
     ngOnInit() {
         this.dto = new Item();
         this.listarItemCafeManha();
+        this.iniciarBack();
     }
 
     voltar() {

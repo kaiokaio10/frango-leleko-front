@@ -35,6 +35,7 @@ export class CadastroComponent {
       {name: 'Kg', code: 'Kg'},
       {name: 'Gramas', code: 'G'},
   ];
+  this.iniciarBack();
   }
 
   validarForm() {
