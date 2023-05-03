@@ -59,7 +59,9 @@ export class HomeComponent {
     var largura = screen.width;
 
     if (largura <= 767 ) {
-      this.celular === true
+      this.celular = true
+      console.log(this.celular);
+      
     }
   }
 

@@ -16,6 +16,8 @@ export class VendaComponent {
   public edicao: boolean = false;
   public medidas: any ;
   public medida: any ;
+  public celular: boolean = false;
+  public pc: boolean = true;
 
 
   constructor(
@@ -30,6 +32,7 @@ export class VendaComponent {
 
   ngOnInit(): void {
     this.iniciarBack();
+    this.teste();
   }
 
   validarForm() {
@@ -87,8 +90,22 @@ export class VendaComponent {
   iniciarBack() {
     this.service.iniciarBack().subscribe(retorno => {
     }, () => {
-      this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Erro ao iniciar o BackEnd' });
     });
+  }
+
+  teste() {
+    var largura = screen.width;
+
+    if (largura <= 767 ) {
+      this.celular = true
+      this.pc = false
+      console.log('celular');
+      
+    } else { 
+      this.celular = false
+      this.pc = true
+      console.log('pc');}
+    
   }
 
 }

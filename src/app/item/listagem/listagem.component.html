@@ -2,6 +2,7 @@
     <p-card class="p-shadow-8" style="width: 100%">
       <h2 style="text-align: center;">Pesquisar por item</h2>
   
+      <div *ngIf = this.celular>
       <div class="p-grid p-justify-center p-mb-2">
         <div class="p-col-12 p-md-6">
           <span class="p-float-label">
@@ -9,6 +10,7 @@
             <label for="nome">Nome do Item *</label>
           </span>
         </div>
+        <br>
         <div class="p-col-12 p-md-6 p-d-flex p-jc-between p-ai-center p-mb-2">
           <button (click)="pesquisar()" pButton pRipple label="Consultar" class="p-button-rounded"></button>
           <button (click)="limpar()" pButton pRipple label="Limpar" class="p-button-rounded"></button>
@@ -20,7 +22,27 @@
           </div>
         </div>
       </div>
-  
+    </div>
+
+    <div *ngIf = this.pc>
+        <div class="p-formgroup-inline">
+            <span class="p-float-label" style="left: 450px;">
+                <input id="float-input" class=" flex-1 w-30rem m-2 px-5 py-3 " ngDefaultControl pInputText maxlength="150" name="nome" type="text"
+                    [(ngModel)]="dto.nome">
+                <label for="nome">Nome do Item  *</label>
+            </span>
+
+            <div class="p-field p-col-12 p-md-4" style="padding-top: 22px;  ">
+                <div class="p-field p-col " style="left: 380px;" >
+                    <button (click)="pesquisar()" pButton pRipple type="button" [style]="{width: '250px', left : '340px'}" label="Consultar" class="p-button-rounded"></button>
+                    <button (click)="limpar()" pButton pRipple type="button" [style]="{width: '250px', left : '340px'}" label="Limpar" class="p-button-rounded"></button>
+                    <button (click)="openNovo()" pButton pRipple type="button" [style]="{width: '250px', left : '340px'}" label="Cadastro" class="p-button-rounded"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
       <div class="p-d-flex p-jc-center">
         <p-table [value]="listaItem" styleClass="p-datatable-sm" [tableStyle]="{'min-width': '50rem'}">
           <ng-template pTemplate="header">

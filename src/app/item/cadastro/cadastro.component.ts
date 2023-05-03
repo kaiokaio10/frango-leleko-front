@@ -17,6 +17,7 @@ export class CadastroComponent {
   public medidas: any ;
   public medida: any ;
   public celular: boolean = false;
+  public pc: boolean = true;
 
   constructor(
     private messageService: MessageService,
@@ -36,6 +37,7 @@ export class CadastroComponent {
       {name: 'Gramas', code: 'G'},
   ];
   this.iniciarBack();
+  this.teste();
   }
 
   validarForm() {
@@ -130,7 +132,20 @@ export class CadastroComponent {
     }, () => {
     });
   }
+  teste() {
+    var largura = screen.width;
 
+    if (largura <= 767 ) {
+      this.celular = true
+      this.pc = false
+      console.log('celular');
+      
+    } else { 
+      this.celular = false
+      this.pc = true
+      console.log('pc');}
+    
+  }
 
 }
   

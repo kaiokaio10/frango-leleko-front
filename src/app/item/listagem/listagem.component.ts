@@ -18,6 +18,8 @@ export class ListagemComponent {
     public dto!: Item;
     public exibir: boolean = false;
     displayModal!: boolean;
+    public celular: boolean = false;
+  public pc: boolean = true;
 
     constructor(
         private router: Router,
@@ -31,6 +33,7 @@ export class ListagemComponent {
         this.dto = new Item();
         this.listarItemCafeManha();
         this.iniciarBack();
+        this.teste();
     }
 
     voltar() {
@@ -100,6 +103,20 @@ export class ListagemComponent {
         });
       }
    
+      teste() {
+        var largura = screen.width;
+    
+        if (largura <= 767 ) {
+          this.celular = true
+          this.pc = false
+          console.log('celular');
+          
+        } else { 
+          this.celular = false
+          this.pc = true
+          console.log('pc');}
+        
+      }
 }
 
 
