@@ -92,6 +92,12 @@ export class ListagemComponent {
         this.router.navigate(['/itens/cadastro', { id: id }]);
     }
 
+    iniciarBack() {
+        this.service.iniciarBack().subscribe(retorno => {
+        }, () => {
+          this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Erro ao iniciar o BackEnd' });
+        });
+      }
    
 }
 

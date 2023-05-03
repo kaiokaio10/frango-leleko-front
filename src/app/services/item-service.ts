@@ -7,7 +7,7 @@ import { Item } from "../model/item";
 
 export class ItemService {
 
-    apiURL: string = 'http://ec2-18-231-39-83.sa-east-1.compute.amazonaws.com:8080'
+    apiURL: string = 'https://frango-leleko-backend10.herokuapp.com'
     path: string ='/api/item'
     constructor(
         private http: HttpClient
@@ -46,6 +46,9 @@ export class ItemService {
 
     visualizarListaCompleta(): Observable<Item[]> {
         return this.http.get<Item[]>(`${this.apiURL + this.path}`);
+    }
+    iniciarBack(): Observable<any> {
+        return this.http.get<any>(`${this.apiURL}`);
     }
 
 }

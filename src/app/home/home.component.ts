@@ -26,6 +26,7 @@ export class HomeComponent {
 
     ngOnInit() {
       this.listarVendas();
+      
   }
 
   listarVendas() {
@@ -43,6 +44,12 @@ export class HomeComponent {
       this.listaVenda = retorno;
     }, () => {
       this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Erro ao realizar consulta' });
+    });
+  }
+  iniciarBack() {
+    this.service.iniciarBack().subscribe(retorno => {
+    }, () => {
+      this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Erro ao iniciar o BackEnd' });
     });
   }
 

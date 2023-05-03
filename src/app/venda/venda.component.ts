@@ -83,4 +83,11 @@ export class VendaComponent {
     this.router.navigate(['/home']);
   }
 
+  iniciarBack() {
+    this.service.iniciarBack().subscribe(retorno => {
+    }, () => {
+      this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Erro ao iniciar o BackEnd' });
+    });
+  }
+
 }

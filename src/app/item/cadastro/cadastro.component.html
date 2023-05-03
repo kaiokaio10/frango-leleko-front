@@ -1,35 +1,43 @@
 <p-toast></p-toast>
 <p-card>
-        <h2 style="text-align: center;">{{edicao? 'Alterar' : 'Cadastrar' }} Participante</h2>
-            
-            <span class="p-float-label" style="left: 400px;">
-                <input id="float-input" class=" flex-1 w-30rem m-2 px-5 py-3 " ngDefaultControl pInputText maxlength="150" name="nome" type="text"
-                    [(ngModel)]="dto.nome">
-                <label for="nome">Nome *</label>
-            </span>
-            <br>
-            <span class="p-float-label" style="left: 400px;">
-                <input id="float-input" class="w-30rem m-2 px-5 py-3 " ngDefaultControl pInputText maxlength="150" name="valor" type="text"
-                    [(ngModel)]="dto.valor">
-                <label for="valor">Valor *</label>
-            </span>
-            
-            <br>
-            <span class="p-float-label" style="left: 400px;">
-                <input id="float-input" class="w-22rem m-2 px-5 py-3" ngDefaultControl pInputText maxlength="150" name="quantidade" type="text"
-                    [(ngModel)]="dto.quantidade">
-                <label for="quantidade">Quantidade *</label>
-                <p-dropdown [options]="medidas" [(ngModel)]="medida" placeholder="Medidas" optionLabel="name" ></p-dropdown>
-            </span>
+  <h2 style="text-align: center;">{{edicao? 'Alterar' : 'Cadastrar' }} Item</h2>
 
-            <div class="p-field p-col-12 p-md-2" style="padding-top: 22px;  ">
-                    <div class="p-field p-col " style="left: 400px;" >
-                        <button (click)="save()" pButton pRipple type="button" [style]="{width: '250px', left : '380px'}" label="salvar" class="p-button-rounded"
-                            [label]="edicao?'Alterar': 'Salvar'"></button>
-                        <button pButton pRipple type="button" label="Voltar" [style]="{width: '250px',left:'400px'}"
-                            class="p-button-rounded p-button-secondary " (click)="voltar()"></button>
-                    </div>
-            </div>
-        </p-card>
+  <div class="p-grid">
+    <div class="p-col-12 p-md-6">
+      <span class="p-float-label">
+        <input id="float-input" class="p-inputtext p-component" ngDefaultControl pInputText maxlength="150" name="nome" type="text"
+          [(ngModel)]="dto.nome">
+        <label for="nome">Nome *</label>
+      </span>
+    </div>
+    <div class="p-col-12 p-md-6">
+      <span class="p-float-label">
+        <input id="float-input" class="p-inputtext p-component" ngDefaultControl pInputText maxlength="150" name="valor" type="text"
+          [(ngModel)]="dto.valor">
+        <label for="valor">Valor *</label>
+      </span>
+    </div>
+  </div>
 
+  <div class="p-grid">
+    <div class="p-col-12 p-md-6">
+      <span class="p-float-label">
+        <input id="float-input" class="p-inputtext p-component" ngDefaultControl pInputText maxlength="150" name="quantidade" type="text"
+          [(ngModel)]="dto.quantidade">
+        <label for="quantidade">Quantidade *</label>
+        <p-dropdown [options]="medidas" [(ngModel)]="medida" placeholder="Medidas" optionLabel="name"></p-dropdown>
+      </span>
+    </div>
+    <div class="p-col-12 p-md-6">
+      <div class="p-field" style="padding-top: 22px;">
+        <button (click)="save()" pButton pRipple type="button" label="{{edicao ? 'Alterar' : 'Salvar'}}"
+          class="p-button-rounded" style="width: 100%;"></button>
+      </div>
+      <div class="p-field" style="padding-top: 22px;">
+        <button pButton pRipple type="button" label="Voltar" class="p-button-secondary p-button-rounded"
+          (click)="voltar()" style="width: 100%;"></button>
+      </div>
+    </div>
+  </div>
 
+</p-card>
