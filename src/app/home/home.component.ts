@@ -16,6 +16,7 @@ export class HomeComponent {
     public dto!: Venda;
     public exibir: boolean = false;
     displayModal!: boolean;
+    public celular: boolean = false;
     
 
     constructor(
@@ -52,13 +53,14 @@ export class HomeComponent {
   iniciarBack() {
     this.service.iniciarBack().subscribe(retorno => {
     }, () => {
-      this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Erro ao iniciar o BackEnd' });
     });
   }
   teste() {
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     console.log(isMobile);
-    
+    if (isMobile === true) {      
+      this.celular === true
+    }
   }
 
   

@@ -3,6 +3,7 @@
   <div class="p-col-12">
     <p-card>
       <h2 style="text-align: center;">Relatório de Vendas</h2>
+      <h2 style="text-align: center;">{{this.celular? 'celular' : '' }} </h2>
       <div class="p-grid">
         <div class="p-col-12 p-md-8 p-lg-6">
           <p-table [value]="listaVenda" styleClass="p-datatable-gridlines">

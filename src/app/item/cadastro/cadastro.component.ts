@@ -16,7 +16,7 @@ export class CadastroComponent {
   public edicao: boolean = false;
   public medidas: any ;
   public medida: any ;
-
+  public celular: boolean = false;
 
   constructor(
     private messageService: MessageService,
@@ -125,9 +125,9 @@ export class CadastroComponent {
   }
 
   iniciarBack() {
+    
     this.service.iniciarBack().subscribe(retorno => {
     }, () => {
-      this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Erro ao iniciar o BackEnd' });
     });
   }
 
