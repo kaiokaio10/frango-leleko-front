@@ -59,20 +59,26 @@ export class ListagemComponent {
         });
     }
 
-    confirmar(id: number, event: Event) {
-        this.confirmationService.confirm({
-            target: event.target as EventTarget,
-            acceptLabel: 'Sim',
-            rejectLabel: 'Não',
-            message: 'Confirma a exclusão da item?',
-            icon: 'pi pi-exclamation-triangle',
-            accept: () => {
-                this.excluir(id);
-            },
-            reject: () => {
-            }
-        });
-    }
+    confirmar(id: number, event: MouseEvent) {
+      const target = event.target as unknown;
+      console.log("foi");
+      if (target instanceof EventTarget) {
+          this.confirmationService.confirm({
+              target: target,
+              acceptLabel: 'Sim',
+              rejectLabel: 'Não',
+              message: 'Confirma a exclusão do item?',
+              icon: 'pi pi-exclamation-triangle',
+              accept: () => {
+                  this.excluir(id);
+              },
+              reject: () => {
+              }
+          });
+      }
+  }
+  
+  
 
     limpar() {
         this.listaItem = [];

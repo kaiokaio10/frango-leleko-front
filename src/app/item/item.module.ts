@@ -5,6 +5,7 @@ import { RouterModule } from "@angular/router";
 import { ButtonModule } from "primeng/button";
 import { TableModule } from 'primeng/table';
 import { CadastroComponent } from "./cadastro/cadastro.component";
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
 
 
 
@@ -20,6 +21,7 @@ import { CadastroComponent } from "./cadastro/cadastro.component";
       FormsModule,
       ButtonModule,
       TableModule,
+      ConfirmPopupModule,
     ],
   })
   export class ItemModule { }
