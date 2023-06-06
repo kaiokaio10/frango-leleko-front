@@ -13,6 +13,7 @@
         <label for="nome">Nome *</label>
       </span>
     </div>
+    <br>
     <div class="p-col-12 p-md-6">
       <span class="p-float-label">
         <input id="float-input" class="p-inputtext p-component" ngDefaultControl pInputText maxlength="150" name="valor" type="text"
@@ -21,7 +22,7 @@
       </span>
     </div>
   </div>
-
+  <br>
   <div class="p-grid">
     <div class="p-col-12 p-md-6">
       <span class="p-float-label">
@@ -31,6 +32,7 @@
         <p-dropdown [options]="medidas" [(ngModel)]="medida" placeholder="Medidas" optionLabel="name"></p-dropdown>
       </span>
     </div>
+    <br>
     <div class="p-col-12 p-md-6">
       <div class="p-field" style="padding-top: 22px;">
         <button (click)="save()" pButton pRipple type="button" label="{{edicao ? 'Alterar' : 'Salvar'}}"
